@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-module.exports.loadData = (fileName) => {
+module.exports.getFile = (fileName) => {
     try {
         var data = fs.readFileSync(fileName, 'utf8');
         var arr = data.toString().split("\n");
