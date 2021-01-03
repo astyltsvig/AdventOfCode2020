@@ -5,8 +5,6 @@
 var fileHandler = require('../helper/fileHandler')
 var data = fileHandler.getFile("data.txt")
 
-// https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
-
 var countOfValidPassword = 0
 
 data.forEach(row => {

@@ -5,6 +5,7 @@
 var fileHandler = require('../helper/fileHandler')
 var data = fileHandler.getFile("data.txt")
 
+
 // https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
 String.prototype.count = function (s1) {
     return (this.length - this.replace(new RegExp(s1, "g"), '').length) / s1.length;
