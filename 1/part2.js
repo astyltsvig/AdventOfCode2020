@@ -24,13 +24,15 @@ var arr = formatter.cleanData2(arr, SUM)
 // 3. If the min and max from arr is equal to SUM then the loop stops
 var found = false
 var attemt = 0
-var min = 0
-var middle = 1
+let min = 0
+let middle = 1
+let max
+let result
 
 while (!found) {
     attemt++
-    var max = arr.length - 1
-    var result = arr[min] + arr[middle] + arr[max]
+    max = arr.length - 1
+    result = arr[min] + arr[middle] + arr[max]
 
     if (result > SUM) {
         arr.pop()
@@ -51,3 +53,13 @@ while (!found) {
         found = true
     }
 }
+
+// Saving to log
+var answer = arr[min] * arr[middle] * arr[max]
+var data = {
+    "result": answer, "data": {
+        "min": arr[min], "middle": arr[middle], "max": arr[max], "countOfAttemts": attemt
+    }
+}
+var fileName = "result_1_part2.json"
+fileHandler.setResult(fileName, data)

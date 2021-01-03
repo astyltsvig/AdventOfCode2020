@@ -25,11 +25,13 @@ var arr = formatter.cleanData(arr, SUM)
 var found = false
 var attemt = 0
 var min = 0
+let result
+let max
 
 while (!found) {
     attemt++
-    var max = arr.length - 1
-    var result = arr[min] + arr[max]
+    max = arr.length - 1
+    result = arr[min] + arr[max]
 
     if (result > SUM) {
         arr.pop()
@@ -44,3 +46,9 @@ while (!found) {
         found = true
     }
 }
+
+// Saving to log
+var answer = arr[min] * arr[max]
+var data = { "result": answer, "data": { "min": arr[min], "max": arr[max], "countOfAttemts": attemt } }
+var fileName = "result_1_part1.json"
+fileHandler.setResult(fileName, data)

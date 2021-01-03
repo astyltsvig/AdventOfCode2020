@@ -9,3 +9,14 @@ module.exports.loadData = (fileName) => {
         console.log('Error:', e.stack);
     }
 }
+
+module.exports.setResult = (fileName, data) => {
+    try {
+        fs.writeFileSync(fileName, JSON.stringify(data));
+        console.log("FILE SAVED")
+        console.log(fileName)
+        return 1
+    } catch (e) {
+        console.log('Error:', e.stack);
+    }
+}
