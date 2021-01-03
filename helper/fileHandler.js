@@ -20,3 +20,4 @@ module.exports.setResult = (fileName, data) => {
         console.log('Error:', e.stack);
     }
 }
+
